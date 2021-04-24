@@ -1,8 +1,9 @@
 
+from graph.graph import Graph
 from graph.tree import RootedTree
 
 
-def bfs_2list(s, g):
+def bfs_2list(s, g: Graph) -> RootedTree:
     cur, next = [s], []
     t = RootedTree(s)
     while cur:
