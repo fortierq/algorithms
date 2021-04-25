@@ -19,13 +19,3 @@ def tarjan(g):
             bridges.add((pred, v))
     dfs(0, None)
     return bridges
-
-print(tarjan({
-        0: {1, 2}, 
-        1: {0, 3, 4}, 
-        2: {5, 0}, 
-        3: {0, 1}, 
-        4: {1}, 
-        5: {2, 6},
-        6: {2}
-    }))
