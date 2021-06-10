@@ -4,7 +4,7 @@ from collections import defaultdict
 
 class RootedTree(Graph):
     def __init__(self, root):
-        self._pred = dict()
+        self._pred = {}
         self._next = defaultdict(set)
         self._root = root
     def __getitem__(self, v):
