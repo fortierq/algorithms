@@ -15,7 +15,7 @@ class BST:
         else:
             self.right.add(val)
     
-    def del_max(self):
+    def del_max(self):  # does not work if root is max
         v, prev = self, self
         while v.right:
             prev = v
@@ -25,8 +25,10 @@ class BST:
     
     def rm(self, val):
         if self.val == val:
-            if self.left:
+            if self.left.right:  # can call self.left.del_max
                 self.val = self.left.del_max()
+            elif self.left:  
+                self = self.left
             else:
                 return self.right
         else:
