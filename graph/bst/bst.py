@@ -25,17 +25,16 @@ class BST:
     
     def rm(self, val):
         if self.val == val:
+            if not self.left:
+                return self.right
             if self.left.right:  # can call self.left.del_max
                 self.val = self.left.del_max()
-            elif self.left:  
+            else:
                 self = self.left
-            else:
-                return self.right
+        elif val < self.val:
+            self.left = self.left.rm(val)
         else:
-            if val < self.val:
-                self.left = self.left.rm(val)
-            else:
-                self.right = self.right.rm(val)
+            self.right = self.right.rm(val)
         return self
 
     def __contains__(self, val):

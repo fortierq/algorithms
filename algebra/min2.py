@@ -1,7 +1,7 @@
 from collections import defaultdict
 
 
-def min2(L):
+def min2(L):  # returns the second minimum in L
     losers = defaultdict(list)  # losers[n]: list of elements that lost vs n
     while len(L) > 1:
         L_ = []
