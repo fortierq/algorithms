@@ -10,3 +10,5 @@ def test_bst():
     t.rm(2)
     assert all(e not in t for e in [2, 42])
     assert all(e in t for e in [0, -4])
+
+test_bst()
